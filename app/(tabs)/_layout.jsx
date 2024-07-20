@@ -7,31 +7,28 @@ export default function TabLayout() {
   return (
     <Tabs screenOptions={
         {
-            tabBarActiveTintColor : Colors.PRIMARY
+            tabBarActiveTintColor : Colors.PRIMARY ,
+            tabBarStyle : {height : 60} ,
+
+            tabBarLabelStyle : {fontSize : 18} ,
         }
     }>
         <Tabs.Screen name='home' options={{
             tabBarLabel : "Home" ,    
             headerShown : false , 
-            tabBarIcon : ({color})=><Ionicons name="home" size={24} color={color}/>
+            tabBarIcon : ({color})=><Ionicons name="home" size={30} color={color}/>
+        
         }} >
 
         </Tabs.Screen>
-        <Tabs.Screen name='explore' options={{
-            tabBarLabel : "EXplore" ,
+        <Tabs.Screen name='AddItems' options={{
+            tabBarLabel : "Add Items" ,
             headerShown : false ,
-            tabBarIcon : ({color})=><Ionicons name="search" size={24} color={color}/>
+            tabBarIcon : ({color})=><Ionicons name="add-circle-sharp" size={30} color={color}/>
         }}>
             
         </Tabs.Screen>
-        <Tabs.Screen name='profile' options={{
-            tabBarLabel : "Profile" ,
-            headerShown : false ,
-
-            tabBarIcon : ({color})=><Ionicons name="people-circle" size={24} color={color}/>
-        }}>
-            
-        </Tabs.Screen>
+        
     </Tabs>
   )
 }

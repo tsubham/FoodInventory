@@ -1,21 +1,28 @@
-import { View, Text } from 'react-native'
+import { View, Text, Alert } from 'react-native'
 import React from 'react'
+import { useState , useEffect } from 'react'
 import Header from '../../components/Home/Header'
-import Slider from '../../components/Home/Slider'
-import Category from '../../components/Home/Category'
-import BusinessList from '../../components/Home/PopularBusiness'
+import { collection , getDocs, query  } from 'firebase/firestore'
+import { db } from '../../config/fireBaseConfig'
+import ItemList from '../../components/ItemList/ItemList'
 import { ScrollView } from 'react-native'
+
 export default function home() {
+
   return (
     
     <ScrollView>
     <Header />
-    <Slider />
-    <Category />
-    <BusinessList/>
-    <View style={{height:100}}>
+
+
+   
+    <ItemList />
+    <View style ={{
+      height : 15
+    }}>
 
     </View>
+    
     </ScrollView>
   )
 }
